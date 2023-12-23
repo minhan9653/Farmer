@@ -1,0 +1,94 @@
+<!-- 게시물 템플릿 (show_post.html) -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>게시물</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='show_post.css') }}">
+</head>
+<body>
+    <div class="header">
+        <a href="{{ url_for('index') }}" class="home-button">게시판</a>
+        <h1>게시물</h1>
+    </div>
+    <br>
+    <br>
+    <br>
+    <table>
+        <tr>
+            <td>제목:</td>
+            <td>{{ post.title }}</td>
+        </tr>
+        <tr>
+            <td>작성자:</td>
+            <td>{{ post.author }}</td>
+        </tr>
+        <tr>
+            <td>작성일:</td>
+            <td>{{ post.created_at }}</td>
+        </tr>
+        <tr>
+            <td>조회수:</td>
+            <td>{{ post.views }}</td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <br>
+
+    <hr>
+    <br><br><br>
+    
+ <!-- 이미지 표시 -->
+<div class="image-container">
+    {% if post.image %}
+    <img src="{{ url_for('static', filename=post.image) }}" alt="게시물 이미지" width="800" height="600">
+    {% endif %}
+</div>
+    
+    <hr>
+    
+    <!-- 글 내용에 선 추가 -->
+    <div class="post-content">
+        <p>{{ post.content }}</p>
+        
+        <!-- 수정 버튼과 삭제 버튼을 하나의 div로 묶어서 오른쪽에 배치 -->
+        <div class="edit-delete-buttons">
+            <form method="GET" action="{{ url_for('edit', id=post.id) }}" class="edit-form">
+                <button type="submit" class="edit-button">게시물 수정</button>
+            </form>
+    
+            <form method="GET" action="{{ url_for('delete', id=post.id) }}" class="delete-form">
+                <button type="submit" class="delete-button">게시물 삭제</button>
+            </form>
+        </div>
+    </div>
+    
+    <br>
+    <br><br>
+    <h3>댓글</h3>
+    <br>
+    <!-- 댓글 목록 -->
+    <ul class="comment-list">
+        {% for comment in comments %}
+            <li class="comment-item">
+                <div>
+                    <span class="comment-text">{{ comment.text }}</span>
+                    <span class="comment-date">({{ comment.created_at }})</span>
+                    <!-- 댓글 삭제 폼 -->
+                    <form method="POST" action="{{ url_for('delete_comment', id=comment.id) }}" class="delete-comment-form">
+                        <button type="submit" class="delete-button">댓글 삭제</button>
+                    </form>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <!-- 댓글 작성 폼 -->
+    <div id="comment-form-container">
+        <form action="{{ url_for('add_comment', id=post.id) }}" method="POST" class="comment-form">
+            <input type="text" name="comment_text" placeholder="댓글 작성">
+            <button type="submit" class="comment-button">댓글 작성</button>
+        </form>
+    </div>
+</body>
+</html>

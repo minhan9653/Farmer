@@ -1,0 +1,296 @@
+/* 기본 스타일 초기화 */
+body, h1, h2, h3, p, ul, ol, li, table, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/* 전체 본문 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* 제목 스타일 */
+h1 {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+}
+
+/* 테이블 스타일 */
+table {
+    flex: 3;
+    width: 100%;
+    background-color: #fff;
+    border-collapse: collapse;
+    margin: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+thead {
+    background-color: #333;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+/* 링크 스타일 */
+a {
+    text-decoration: none;
+    color: #007bff;
+    margin-right: 10px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* 댓글 작성 폼 스타일 */
+.comment-form input[type="text"] {
+    width: 50%;
+    padding: 5px;
+    margin-top: 10px;
+    margin-left: 380px;
+}
+
+.comment-form button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.comment-form button:hover {
+    background-color: #0056b3;
+}
+
+/* 댓글 날짜 스타일 */
+.comment-date {
+    margin-right: 10px;
+}
+
+/* 삭제 버튼 스타일 */
+.delete-button {
+    background-color: transparent;
+    color: #f00;
+    border: none;
+    padding: 0;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    text-decoration: underline;
+}
+
+/* 홈 버튼 스타일 */
+.home-button {
+    padding: 20px 30px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.home-button:hover {
+    background-color: #042344;
+}
+
+/* 게시물 내용 스타일 */
+.post-content {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    margin: 20px;
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* 게시물 수정 버튼 스타일 */
+.edit-form {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+/* 게시물 삭제 버튼 스타일 */
+.delete-form {
+    text-align: right;
+}
+
+/* 댓글 목록 스타일 */
+.comment-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.comment-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.comment-text {
+    margin-right: 10px;
+}
+
+.delete-comment-form {
+    display: flex;
+    align-items: center;
+}
+
+.delete-comment-form input[type="password"] {
+    width: 120px;
+    margin-right: 10px;
+}
+
+/* 버튼 스타일 */
+.btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* 검색 폼 스타일 */
+.search-form {
+    text-align: center;
+    margin: 20px;
+}
+
+.search-input {
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+/* 헤더 스타일 */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+/* 메인 페이지로 돌아가는 홈 버튼 스타일 */
+.home-button {
+    padding: 20px 30px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+/* 헤더의 홈 버튼 호버(마우스 오버) 스타일 */
+.home-button:hover {
+    background-color: #042344;
+}
+
+/* 게시물 삭제 버튼 위치 스타일 */
+.delete-button {
+    margin-top: 0px;
+}
+
+/* 댓글 작성 폼 위치 스타일 */
+#comment-form-container {
+    margin-right: 10px;
+}
+
+/* 테이블 스타일 */
+table {
+    margin: 0 auto;
+    text-align: center;
+    width: 60%;
+}
+
+/* 제목 스타일 */
+h3 {
+    margin-left: 380px;
+}
+
+/* 댓글 목록 스타일 */
+ul {
+    text-align: right;
+    margin-top: 10px;
+    margin-left: 380px;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Add styles for the Edit button */
+.edit-form {
+    display: inline;
+}
+
+.edit-button {
+    background-color: transparent;
+    color: rgb(7, 175, 241);
+    border: none;
+    padding: 0;
+    margin-left: 10px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.edit-button:hover {
+    text-decoration: underline;
+}
+
+
+.image-container {
+    text-align: center;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+}
+
