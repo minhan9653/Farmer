@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+
+# Node
+node_modules/
+dist/
+
+# Uploads (사용자 데이터)
+backend/uploads/
+
+# Model (용량 큼)
+backend/yolov5s.pt
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.sw?
+
+# OS
+.DS_Store
+Thumbs.db
